@@ -1,36 +1,25 @@
 var path = require('path');
 var expect = require('chai').expect;
 
-var modulo_3 = require(path.join(__dirname, '..', './modulo_3.js'));
+var Modulo_3 = require(path.join(__dirname, '..', './Modulo_3.js'));
 
-describe('modulo_3', function () {
+describe('Modulo_3()', function () {
   'use strict';
 
   it('exists', function () {
-    expect(modulo_3).to.be.a('function');
-
+    expect(Modulo_3).to.be.a('function');
   });
 
-  it('get modulo 3', function () {
-    expect(11).to.equal(2);
-  });
+  it('computes mod 3', function() {
+    const input = [7, 2, 8, 3, 9, 4, 10, 5, 11, 6];
+    const output = [1, 2, 2, 0, 0, 1, 1, 2, 2, 0];
 
-  it('get modulo 3', function () {
-    expect(9).to.equal(0);
-  });
+    const length = input.length;
 
-  it('get modulo 3', function () {
-    expect(10).to.equal(1);
+    for (let i= 0; i < length; i++) {
+      expect(Modulo_3(input[i])).to.equal(output[i]);
+    }
   });
-
-  it('get modulo 3', function () {
-    expect(4).to.equal(1);
-  });
-
-  it('get modulo 3', function () {
-    expect(5).to.equal(2);
-  });
-
 
   // Add more assertions here
 });
